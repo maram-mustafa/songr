@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<h1>ALBUMS PAGE</h1>
+
+<div th:each="album : ${albums}">
+    <h5><br> <img th:src=${album.imageUrl}></img></h5>
+    <h5>title = <span th:text=${album.title}></span></h5>
+    <h5>artist = <span th:text=${album.artist}></span></h5>
+    <h5>songCount = <span th:text=${album.songCount}></span></h5>
+    <h5>length = <span th:text=${album.length}></span></h5>
+    <hr>
+
+</div>
+
+</body>
+</html>
