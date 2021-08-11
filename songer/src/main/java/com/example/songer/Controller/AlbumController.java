@@ -1,6 +1,5 @@
 package com.example.songer.Controller;
 
-
 import com.example.songer.Models.Album;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
