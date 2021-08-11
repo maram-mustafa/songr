@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<h1> Form for add Album</h1>
+<form action="#" th:action="@{/addAlbum}" th:object="${album}" method="post">
+  <p>Title: <input type="text" th:field="*{title}" /></p>
+  <p>Artist: <input type="text" th:field="*{artist}" /></p>
+  <p>LengthInSec: <input type="text" th:field="*{length}" /></p>
+  <p>ImageUrl: <input type="text" th:field="*{imageUrl}" /></p>
+  <p><input type="submit" value="Submit" /></p>
+</form>
+
+
+<h1> Results</h1>
+<div th:each="album : ${albums}">
+    <h5><br> <img th:src=${album.imageUrl}></img></h5>
+    <h5>title = <span th:text=${album.title}></span></h5>
+    <h5>artist = <span th:text=${album.artist}></span></h5>
+    <h5>songCount = <span th:text=${album.songCount}></span></h5>
+    <h5>length = <span th:text=${album.length}></span></h5>
+    <hr>
+
+</div>
+
+
+</body>
+</html>
