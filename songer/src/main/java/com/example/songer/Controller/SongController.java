@@ -19,16 +19,16 @@ public class SongController {
 
 
     @GetMapping("/allsongs")
-    public String getSongs(Model model){
+    public String getSongs(Model model) {
         model.addAttribute("song", new Song());
-        model.addAttribute("songs",songRepository.findAll()); // for the results table
-        model.addAttribute("albums",albumRepository.findAll()); // for the select options
+        model.addAttribute("songs", songRepository.findAll()); // for the results table
+        model.addAttribute("albums", albumRepository.findAll()); // for the select options
         return "allSongs.html";
     }
 
 
     @PostMapping("/addSong")
-    public RedirectView addSong(@ModelAttribute Song song){
+    public RedirectView addSong(@ModelAttribute Song song) {
         System.out.println(song.getAlbum().getSongs());
         songRepository.save(song);
         return new RedirectView("/allSongs");

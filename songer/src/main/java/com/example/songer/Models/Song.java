@@ -16,7 +16,7 @@ public class Song {
     private Album album;  // create instance from album
 
 
-    public Song(){   //default constroctur
+    public Song() {   //default constroctur
     }
 
     public Song(String title, int length, Album album) {
@@ -49,7 +49,7 @@ public class Song {
         this.length = length;
     }
 
-    public Album getAlbum()  {
+    public Album getAlbum() {
         return album;
     }
 

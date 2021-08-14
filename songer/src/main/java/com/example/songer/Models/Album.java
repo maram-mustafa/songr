@@ -18,7 +18,7 @@ public class Album {
     private List<Song> songs;
 
 
-    public Album(){   //default constructor
+    public Album() {   //default constructor
     }
 
 

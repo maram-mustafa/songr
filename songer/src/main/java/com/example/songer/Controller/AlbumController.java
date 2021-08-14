@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.example.songer.repositories.AlbumRepository;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -49,6 +50,14 @@ public class AlbumController {
         albumRepository.save(album);
         return new RedirectView("/allAlbums");
     }
+    ///////////////////////////////////// LAB 13 /////////////////////////////////////////////////////////////////
 
+    // to get only one single album
+    @GetMapping("/album/{songCount}")
+    public String getOneAlbum(@PathVariable Integer songCount, Model model){
+
+        model.addAttribute("album",albumRepository.findById(songCount).get());
+        return "singleAlbum.html";
+    }
 
 }
