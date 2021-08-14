@@ -19,9 +19,10 @@ public class Song {
     public Song(){   //default constroctur
     }
 
-    public Song(String title, int length) {
+    public Song(String title, int length, Album album) {
         this.title = title;
         this.length = length;
+        this.album = album;
     }
 
     public int getTrackNumber() {
@@ -46,6 +47,14 @@ public class Song {
 
     public void setLength(int length) {
         this.length = length;
+    }
+
+    public Album getAlbum()  {
+        return album;
+    }
+
+    public void setAlbum(Album album) {
+        this.album = album;
     }
 
     @Override
