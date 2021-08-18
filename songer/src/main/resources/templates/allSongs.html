@@ -9,7 +9,7 @@
 <body>
 
 <h1>form for add song</h1>
-<form action="#" th:action="@{/addSong}" th:object="${song}" method="post">
+<form action="#" th:action="/addSong"  method="post">
     <p>Title: <input type="text" th:field="*{title}"/></p>
     <p>Length: <input type="text" th:field="*{length}"/></p>
     <p>Album:

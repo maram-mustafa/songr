@@ -5,19 +5,41 @@
     <title>Title</title>
 </head>
 <body>
-  <div>
-    <h3>Album</h3>
+    <h3>Album title</h3>
     <p th:text="${album.title}"></p>
     <h3>Artist</h3>
     <p th:text="${album.artist}"></p>
     <img th:src="${album.imageUrl}"/>
   </div>
 
-  <h3>song</h3>
-  <p th:each="song: ${album.songs}"></p>
-  <p th:text="${song.trackNumber}"></p>
-  <p th:text="${song.title}"></p>
-  <img th:text="${song.length}"/>
+  <div>
+    <h3>Songs</h3>
+    <table>
+      <tr>
+        <th>trackNumber</th>
+        <th>title</th>
+        <th>length</th>
+      </tr>
+      <tr th:each="song: ${album.songs}">
+        <td th:text="${song.trackNumber}"></td>
+        <td th:text="${song.title}"></td>
+        <td th:text="${song.length}"></td>
+      </tr>
+    </table>
+  </div>
+<!--  <div>-->
+<!--    <h3>Album</h3>-->
+<!--    <p th:text="${album.title}"></p>-->
+<!--    <h3>Artist</h3>-->
+<!--    <p th:text="${album.artist}"></p>-->
+<!--    <img th:src="${album.imageUrl}"/>-->
+<!--  </div>-->
+
+<!--  <h3>song</h3>-->
+<!--  <p th:each="song: ${album.songs}"></p>-->
+<!--  <p th:text="${song.trackNumber}"></p>-->
+<!--  <p th:text="${song.title}"></p>-->
+<!--  <img th:text="${song.length}"/>-->
 
 
 </body>

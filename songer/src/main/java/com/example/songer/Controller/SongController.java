@@ -26,13 +26,10 @@ public class SongController {
         return "allSongs.html";
     }
 
-
     @PostMapping("/addSong")
     public RedirectView addSong(@ModelAttribute Song song) {
         System.out.println(song.getAlbum().getSongs());
         songRepository.save(song);
         return new RedirectView("/allSongs");
     }
-
-
 }
