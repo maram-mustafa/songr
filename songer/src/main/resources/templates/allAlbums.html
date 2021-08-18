@@ -10,11 +10,11 @@
 
 <h1> Form for add Album</h1>
 <form action="#" th:action="@{/addAlbum}" th:object="${album}" method="post">
-  <p>Title: <input type="text" th:field="*{title}" /></p>
-  <p>Artist: <input type="text" th:field="*{artist}" /></p>
-  <p>LengthInSec: <input type="text" th:field="*{length}" /></p>
-  <p>ImageUrl: <input type="text" th:field="*{imageUrl}" /></p>
-  <p><input type="submit" value="Submit" /></p>
+    <p>Title: <input type="text" th:field="*{title}"/></p>
+    <p>Artist: <input type="text" th:field="*{artist}"/></p>
+    <p>LengthInSec: <input type="text" th:field="*{length}"/></p>
+    <p>ImageUrl: <input type="text" th:field="*{imageUrl}"/></p>
+    <p><input type="submit" value="Submit"/></p>
 </form>
 
 

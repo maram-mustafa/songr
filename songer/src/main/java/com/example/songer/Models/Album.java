@@ -1,10 +1,7 @@
 package com.example.songer.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
+import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -17,8 +14,11 @@ public class Album {
     private String artist;
     private int length;
     private String imageUrl;
+    @OneToMany(mappedBy = "album") // this col added to song table
+    private List<Song> songs;
 
-    public Album(){   //default constructor
+
+    public Album() {   //default constructor
     }
 
 
@@ -68,6 +68,14 @@ public class Album {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
     }
 
     @Override
